@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><B>Blog</B></title>
+        <title><b>Blog</b></title>
     </head>
     <body>
-        <!-- <header>
-            <h1><a href="/"></a></h1>
-        </header> -->
+        <header>
+            <h1><a href="/">Blog</a></h1>
+        </header>
 
+        {% for post in posts %}
         <article>
-            <time>published: 10.07.2025, 11:31</time>
-            <h2><a href="">My first post</a></h2>
-            <p>Sanjeet thapa </p>
+            <time>Published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
+        {% endfor %}
 
-        <article>
-            <time>published: 10.07.2025, 11:31</time>
-            <h2><a href="">My second post</a></h2>
-            <p>Void</p>
-        </article>
     </body>
 </html>
